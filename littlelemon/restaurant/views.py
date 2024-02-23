@@ -7,11 +7,13 @@ from . import serializers
 
 # Create your views here.
 class MenuItemsView(ListCreateAPIView):
+  permission_classes = [IsAuthenticated]
   queryset = models.Menu.objects.all()
   serializer_class = serializers.MenuSerializer
 
 
 class SingleMenuItemView(RetrieveUpdateAPIView, DestroyAPIView):
+  permission_classes = [IsAuthenticated]
   queryset = models.Menu.objects.all()
   serializer_class = serializers.MenuSerializer
 
