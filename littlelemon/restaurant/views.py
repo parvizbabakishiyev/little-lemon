@@ -6,6 +6,9 @@ from . import models
 from . import serializers
 
 # Create your views here.
+def index(request):
+  return render(request, 'index.html', {})
+
 class MenuItemsView(ListCreateAPIView):
   permission_classes = [IsAuthenticated]
   queryset = models.Menu.objects.all()
